@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipe Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-shell" aria-label="파이프 퍼즐">
+      <div class="status-row">
+        <p id="status">타일을 돌려 START와 GOAL을 연결하세요.</p>
+      </div>
+
+      <div class="board-wrap">
+        <div id="board" class="board" aria-label="4x4 파이프 퍼즐 보드"></div>
+      </div>
+
+      <div class="controls">
+        <button id="resetBtn" type="button" class="secondary">새 퍼즐</button>
+        <button id="checkBtn" type="button">연결 확인</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="winDialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="winTitle" hidden>
+    <div class="dialog-panel">
+      <p class="eyebrow">SYSTEM CLEAR</p>
+      <h2 id="winTitle">CLEAR</h2>
+      <p id="winSummary">START에서 GOAL까지 회로가 연결되었습니다.</p>
+      <button id="playAgainBtn" type="button">새 퍼즐 시작</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
