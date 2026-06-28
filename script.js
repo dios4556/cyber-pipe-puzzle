@@ -222,11 +222,15 @@ function markConnectedPath() {
   });
 }
 
-function completeGame() {
+async function completeGame() {
+  if (finished) return;
   finished = true;
   statusEl.textContent = "CLEAR";
-  winSummary.textContent = "START에서 GOAL까지 회로가 연결되었습니다.";
+  winSummary.textContent = "도시 에너지 전송 중...";
   winDialog.hidden = false;
+
+  const count = await ProgressStore.increment();
+  winSummary.textContent = `도시 에너지 ${count}회가 누적되었습니다.`;
 }
 
 function checkConnection() {
